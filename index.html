@@ -1,1 +1,208 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - RemovalsCo</title>
+  <meta name="description" content="RemovalsCo provides expert moving and removal services for homes and businesses. Reliable, professional, and friendly movers.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+</head>
+<body class="font-sans">
+  <!-- Header with Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="truck" class="h-8 w-8 text-indigo-600"></i>
+                        <span class="ml-2 text-xl font-bold text-indigo-600">SwiftMove</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="services.html" class="text-black hover:text-indigo-600 px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="about.html" class="text-black hover:text-indigo-600 px-3 py-2 text-sm font-medium">About Us</a>
+                    <a href="contact.html" class="text-black hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    <button class="bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300">Get a Quote</button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-600">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-black hover:text-indigo-600">Services</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-black hover:text-indigo-600">About Us</a>
+                <a href="contact.html" class="text-black hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                <button class="block w-full text-left px-3 py-2 text-base font-medium text-white bg-indigo-600 rounded-md">Get a Quote</button>
+            </div>
+        </div>
+    </nav>
 
+  <section class="relative bg-cover bg-center h-screen" style="background-image: url('images/image01.jpg');">
+  <div class="absolute inset-0 bg-black opacity-70"></div>
+  <div class="relative container mx-auto flex flex-col items-center justify-center text-center text-white h-screen">
+    <h1 class="text-5xl font-bold mb-4">Professional Removals Service</h1>
+    <p class="text-lg mb-6">Reliable, Affordable, and Stress-Free Moving for Your Home or Business</p>
+    <a href="contact.html" class="bg-indigo-700 hover:bg-indigo-700 text-white py-3 px-6 font-semibold">Get a Free Quote</a>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="space-y-6 js-fade opacity-0 transition-opacity duration-1000">
+          <h2 class="text-4xl font-extrabold text-black">
+            About SwiftMove</span>
+          </h2>
+          <p class="text-black leading-relaxed">
+            At <strong>SwiftMove</strong>, we specialize in stress-free removals for homes and businesses. 
+            With years of experience, our dedicated team ensures safe, efficient, and reliable moving 
+            solutions tailored to your needs. Whether you’re relocating across town or managing 
+            large-scale office moves, we’re here to make the process smooth and hassle-free.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+              <span class="text-black">Professional & friendly moving team</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+              <span class="text-black">Safe handling & secure transport</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+              <span class="text-black">Affordable, transparent pricing</span>
+            </li>
+          </ul>
+          <a href="contact.html" class="inline-block bg-indigo-700 text-white px-6 py-3 shadow hover:bg-indigo-700 transition duration-300">
+            Learn More
+          </a>
+        </div>
+        <!-- Right Image -->
+      <div class="bg-white flex justify-center items-center">
+        <img src="images/Truck Coloring Pages.jpeg" alt="SwiftMove Team" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...existing code... -->
+  </main>
+
+  <!-- Why Choose Us Section -->
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Why Choose Us</h2>
+      <p class="text-black mb-10 max-w-2xl mx-auto">
+        We go above and beyond to make your move smooth and stress-free. Here’s why customers trust RemovalsCo for their moving needs:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white">
+          <i data-feather="smile" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Friendly, Professional Team</h3>
+          <p class="text-black">Our staff are courteous, experienced, and dedicated to providing excellent service every step of the way.</p>
+        </div>
+        <div class="p-6 bg-white ">
+          <i data-feather="shield" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Safe & Secure Handling</h3>
+          <p class="text-black">We treat your belongings with care, using quality packing materials and secure transport methods.</p>
+        </div>
+        <div class="p-6 bg-white">
+          <i data-feather="dollar-sign" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Transparent Pricing</h3>
+          <p class="text-black">No hidden fees—just honest, upfront quotes so you know exactly what to expect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <!-- Left Side -->
+    <p class="text-sm">&copy; 2025 RemovalsCo. All rights reserved.</p>
+
+    <!-- Right Side -->
+    <div class="flex flex-col md:flex-row md:space-x-6 text-xs mt-4 md:mt-0 text-right">
+      <a href="mailto:info@swiftmove.com" class="hover:text-white flex items-center">
+        📧 <span class="ml-1">info@swiftmove.com</span>
+      </a>
+      <a href="tel:+1234567890" class="hover:text-white flex items-center">
+        <span class="text-blue-500 mr-1">📞</span> +27 67 050 0856
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+  <a href="https://wa.me/1234567890" target="_blank" aria-label="Chat on WhatsApp"
+     class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.711.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.896 6.994c-.003 5.456-4.438 9.891-9.893 9.891zm8.413-18.306A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.304-1.678a11.876 11.876 0 005.735 1.459h.005c6.554 0 11.889-5.335 11.893-11.892a11.82 11.82 0 00-3.497-8.486z"/>
+    </svg>
+  </a>
+
+  <!-- JavaScript for Mobile Menu and Scroll Animations -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.js-fade');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+    
+    // Initialize Feather Icons
+    feather.replace();
+  </script>
+</body>
+</html>

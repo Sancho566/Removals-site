@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - RemovalsCo</title>
+  <meta name="description" content="Learn about RemovalsCo's history, mission, and team. We provide expert moving and removal services with reliability and professionalism.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Tailwind CSS CDN -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans">
+  <!-- Header with Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <i data-feather="truck" class="h-8 w-8 text-indigo-600"></i>
+            <span class="ml-2 text-xl font-bold text-indigo-600">RemovalsCo</span>
+          </div>
+        </div>
+        <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+          <a href="services.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Services</a>
+          <a href="about.html" class="text-indigo-600 px-3 py-2 text-sm font-medium">About Us</a>
+          <a href="contact.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+          <button class="bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300">Get a Quote</button>
+        </div>
+        <div class="-mr-2 flex items-center md:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <i data-feather="menu" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-base font-medium text-black hover:text-indigo-600">Home</a>
+        <a href="services.html" class="block px-3 py-2 text-base font-medium text-black hover:text-indigo-600">Services</a>
+        <a href="about.html" class="block px-3 py-2 text-base font-medium text-indigo-600">About Us</a>
+        <a href="contact.html" class="block px-3 py-2 text-base font-medium text-black hover:text-indigo-600">Contact</a>
+        <button class="block w-full text-left px-3 py-2 text-base font-medium text-white bg-indigo-600">Get a Quote</button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="about" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="space-y-6">
+        <h2 class="text-4xl font-extrabold text-black">
+          About RemovalsCo
+        </h2>
+        <p class="text-black leading-relaxed">
+          At <strong>RemovalsCo</strong>, we specialize in stress-free removals for homes and businesses. 
+          With years of experience, our dedicated team ensures safe, efficient, and reliable moving 
+          solutions tailored to your needs. Whether you’re relocating across town or managing 
+          large-scale office moves, we’re here to make the process smooth and hassle-free.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+            <span class="text-black">Professional & friendly moving team</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+            <span class="text-black">Safe handling & secure transport</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-indigo-600 mr-3"></i>
+            <span class="text-black">Affordable, transparent service</span>
+          </li>
+        </ul>
+        <a href="contact.html" class="inline-block bg-indigo-700 text-white px-6 py-3 shadow hover:bg-indigo-800 transition duration-300">
+          Learn More
+        </a>
+      </div>
+      <!-- Right Image -->
+      <div class="bg-white flex justify-center items-center">
+        <img src="images/Truck Coloring Pages.jpeg" alt="RemovalsCo Team" />
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Why Choose Us Section -->
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Why Choose Us</h2>
+      <p class="text-black mb-10 max-w-2xl mx-auto">
+        We go above and beyond to make your move smooth and stress-free. Here’s why customers trust RemovalsCo for their moving needs:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white">
+          <i data-feather="smile" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Friendly, Professional Team</h3>
+          <p class="text-black">Our staff are courteous, experienced, and dedicated to providing excellent service every step of the way.</p>
+        </div>
+        <div class="p-6 bg-white ">
+          <i data-feather="shield" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Safe & Secure Handling</h3>
+          <p class="text-black">We treat your belongings with care, using quality packing materials and secure transport methods.</p>
+        </div>
+        <div class="p-6 bg-white">
+          <i data-feather="dollar-sign" class="mx-auto mb-4 text-indigo-600" style="width:40px;height:40px;"></i>
+          <h3 class="text-xl font-semibold mb-2">Transparent Pricing</h3>
+          <p class="text-black">No hidden fees—just honest, upfront quotes so you know exactly what to expect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white py-6">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <!-- Left Side -->
+    <p class="text-sm">&copy; 2025 RemovalsCo. All rights reserved.</p>
+
+    <!-- Right Side -->
+    <div class="flex flex-col md:flex-row md:space-x-6 text-xs mt-4 md:mt-0 text-right">
+      <a href="mailto:info@swiftmove.com" class="hover:text-white flex items-center">
+        📧 <span class="ml-1">info@swiftmove.com</span>
+      </a>
+      <a href="tel:+1234567890" class="hover:text-white flex items-center">
+        <span class="text-blue-500 mr-1">📞</span> +27 67 050 0856
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <!-- JavaScript for Mobile Menu and Icons -->
+  <script>
+    // Initialize Feather Icons
+    feather.replace();
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
