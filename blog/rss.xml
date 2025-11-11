@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Swift Removals Blog</title>
+    <link>https://swiftremovals.co.za/blog/</link>
+    <description>Packing tips, moving checklists and company updates</description>
+    <language>en-za</language>
+    <item>
+      <title>Top 10 Packing Tips for a Stress-Free Move</title>
+      <link>https://swiftremovals.co.za/blog/top-10-packing-tips-for-a-stress-free-move/</link>
+      <pubDate>Tue, 04 Nov 2025 00:00:00 +0200</pubDate>
+      <description>Practical, time-saving packing tips to protect your belongings and reduce moving stress.</description>
+      <guid>https://swiftremovals.co.za/blog/top-10-packing-tips-for-a-stress-free-move/</guid>
+    </item>
+    <item>
+      <title>How to Choose the Right Removals Company in South Africa</title>
+      <link>https://swiftremovals.co.za/blog/how-to-choose-the-right-removals-company-in-south-africa/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0200</pubDate>
+      <description>Key questions and checks to make when hiring a removals company so your move is safe, insured and on-time.</description>
+      <guid>https://swiftremovals.co.za/blog/how-to-choose-the-right-removals-company-in-south-africa/</guid>
+    </item>
+    <item>
+      <title>Moving Day Checklist — What to Do Before the Truck Arrives</title>
+      <link>https://swiftremovals.co.za/blog/moving-day-checklist-what-to-do-before-the-truck-arrives/</link>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 +0200</pubDate>
+      <description>A practical checklist to follow on moving day so everything goes smoothly when the removal team arrives.</description>
+      <guid>https://swiftremovals.co.za/blog/moving-day-checklist-what-to-do-before-the-truck-arrives/</guid>
+    </item>
+  </channel>
+</rss>

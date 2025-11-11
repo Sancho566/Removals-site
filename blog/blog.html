@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swift Removals Blog — Moving Tips & Checklists</title>
+  <meta name="description" content="Swift Removals blog: packing tips, moving checklists, pricing guides and practical advice to make your move stress-free." />
+  <link rel="canonical" href="https://swiftremovals.co.za/blog/" />
+  <meta property="og:title" content="Swift Removals Blog — Moving Tips & Checklists" />
+  <meta property="og:description" content="Packing tips, moving checklists and practical advice from Swift Removals." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://swiftremovals.co.za/blog/" />
+
+  <!-- Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    .post-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+    }
+    .thumb {
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      width: 100%;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .tags .tag {
+      display: inline-block;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 2px 8px;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      margin-right: 4px;
+    }
+    .readmore {
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    /* Floating Home Button */
+    .floating-home-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #facc15; /* yellow */
+      color: #000;
+      padding: 10px 16px;
+      font-weight: 600;
+      border-radius: 9999px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 50;
+    }
+    .floating-home-btn:hover {
+      background: #fde047; /* lighter yellow */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Floating "Back to Home" Button -->
+  <a href="../index.html" class="floating-home-btn">← Back to Home</a>
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-10 text-center">
+    <h1 class="text-3xl font-bold">Swift Removals Blog</h1>
+    <p class="text-gray-200 mt-2">
+      Expert tips, checklists, and guides to make your move smooth and stress-free.
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 my-10" id="main">
+    <h2 class="text-2xl font-semibold mb-6">Latest Posts</h2>
+    <div id="postsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" aria-live="polite">
+      Loading posts…
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">&copy; 2025 SwiftRemovals. All rights reserved.</p>
+      <div class="flex flex-col md:flex-row md:space-x-6 text-xs mt-4 md:mt-0 text-right">
+        <a href="mailto:info@swiftremovals.co.za" class="hover:text-white flex items-center">
+          📧 <span class="ml-1">info@swiftremovals.co.za</span>
+        </a>
+        <a href="tel:+27670500856" class="hover:text-white flex items-center">
+          <span class="text-blue-500 mr-1">📞</span> +27 67 050 0856
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Blog Post Script -->
+  <script>
+    function estimateReadTime(html) {
+      const text = html.replace(/<[^>]+>/g, ' ').trim();
+      const words = text.split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words / 200));
+    }
+
+    async function loadPosts() {
+      try {
+        const res = await fetch('./posts.json', { cache: 'no-store' });
+        const posts = await res.json();
+        if (!posts || !posts.length) {
+          document.getElementById('postsGrid').innerHTML = '<p>No posts yet.</p>';
+          return;
+        }
+
+        posts.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+        const rendered = posts.map(p => {
+          const readMin = estimateReadTime(p.content_html);
+          const imageUrl = p.cover_image && p.cover_image.trim() !== ''
+            ? p.cover_image
+            : 'https://via.placeholder.com/400x250?text=Swift+Removals+Blog';
+          const tagsHtml = (p.tags || []).slice(0, 3).map(t => `<span class="tag">${t}</span>`).join(' ');
+
+          return `
+            <article class="post-card" aria-labelledby="title-${p.slug}">
+              <div class="thumb" style="background-image:url('${imageUrl}')"></div>
+              <div class="card-body">
+                <div class="meta text-sm text-gray-500">
+                  <time datetime="${p.date}">${new Date(p.date).toLocaleDateString()}</time> • <span>${readMin} min read</span>
+                </div>
+                <h3 class="title text-lg font-semibold mt-2" id="title-${p.slug}">
+                  <a href="./post.html?slug=${encodeURIComponent(p.slug)}" class="text-blue-800 hover:underline">${p.title}</a>
+                </h3>
+                <p class="excerpt text-gray-600 mt-2">${p.excerpt || ''}</p>
+                <div class="tags mt-3">${tagsHtml}</div>
+                <div class="mt-4">
+                  <a class="readmore" href="./post.html?slug=${encodeURIComponent(p.slug)}">Read more →</a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        document.getElementById('postsGrid').innerHTML = rendered;
+      } catch (err) {
+        console.error(err);
+        document.getElementById('postsGrid').innerHTML = '<p>Failed to load posts.</p>';
+      }
+    }
+
+    loadPosts();
+  </script>
+
+</body>
+</html>
