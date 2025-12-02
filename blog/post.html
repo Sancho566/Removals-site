@@ -1,170 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title id="pageTitle">Post — Swift Removals</title>
-  <meta name="description" content="" id="metaDesc" />
-  <link rel="canonical" href="https://swiftremovals.co.za/blog/post.html" id="canonicalLink" />
-  
-  <!-- ✅ Tailwind CSS (latest CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title id="pageTitle">Post — Swift Removals</title>
+    <meta name="description" content="" id="metaDesc" />
+    <link
+      rel="canonical"
+      href="https://swiftremovals.co.za/blog/post.html"
+      id="canonicalLink"
+    />
 
-  <!-- Optional custom styles -->
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+    <!-- ✅ Tailwind CSS (latest CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<body class="bg-gray-50 text-gray-800">
-  <!-- ✅ Header -->
-  <header class="bg-black text-white py-6">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-2xl font-bold"><a href="/" class="text-white hover:text-gray-300">Swift Removals</a></h1>
-      <p class="text-sm mt-1">Moving Tips & Checklists</p>
-    </div>
-  </header>
+    <!-- Optional custom styles -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-  <!-- ✅ Main Content -->
-  <main class="container mx-auto px-6 py-10">
-    <p class="mb-6">
-      <a href="./blog.html" class="text-blue-600 hover:underline">← Back to Blog</a>
-    </p>
-
-    <article id="postArea" class="text-gray-600 italic animate-pulse">
-      Loading post…
-    </article>
-  </main>
-
-  <!-- ✅ Footer -->
-  <footer class="bg-black text-white py-6">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-sm">&copy; <span id="year"></span> Swift Removals. All rights reserved.</p>
-
-      <div class="flex flex-col md:flex-row md:space-x-6 text-xs mt-4 md:mt-0 text-right">
-        <a href="mailto:info@swiftremovals.co.za" class="hover:text-white flex items-center">
-          📧 <span class="ml-1">info@swiftremovals.co.za</span>
-        </a>
-        <a href="tel:+27670500856" class="hover:text-white flex items-center">
-          <span class="text-blue-500 mr-1">📞</span> +27 67 050 0856
-        </a>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- ✅ Header -->
+    <header class="bg-black text-white py-6">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-2xl font-bold">
+          <a href="/" class="text-white hover:text-gray-300">Swift Removals</a>
+        </h1>
+        <p class="text-sm mt-1">Moving Tips & Checklists</p>
       </div>
-    </div>
-  </footer>
+    </header>
 
-  <!-- ✅ Blog Post Script -->
-  <script>
-    // Update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- ✅ Main Content -->
+    <main class="container mx-auto px-6 py-10">
+      <p class="mb-6">
+        <a href="./blog.html" class="text-blue-600 hover:underline"
+          >← Back to Blog</a
+        >
+      </p>
 
-    // Helper: Get query parameter
-    function q(name) {
-      return new URLSearchParams(location.search).get(name);
-    }
+      <article id="postArea" class="text-gray-600 italic animate-pulse">
+        Loading post…
+      </article>
+    </main>
 
-    // Helper: Strip HTML for meta description
-    function stripText(html) {
-      const d = document.createElement('div');
-      d.innerHTML = html;
-      return (d.textContent || d.innerText || '').trim();
-    }
+    <!-- ✅ Footer -->
+    <footer class="bg-black text-white py-6">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+      >
+        <p class="text-sm">
+          &copy; <span id="year"></span> Swift Removals. All rights reserved.
+        </p>
 
-    (async function render() {
-      const slug = q('slug');
-      const postArea = document.getElementById('postArea');
+        <div
+          class="flex flex-col md:flex-row md:space-x-6 text-xs mt-4 md:mt-0 text-right"
+        >
+          <a
+            href="mailto:info@swiftremovals.co.za"
+            class="hover:text-white flex items-center"
+          >
+            📧 <span class="ml-1">info@swiftremovals.co.za</span>
+          </a>
+          <a href="tel:+27670500856" class="hover:text-white flex items-center">
+            <span class="text-blue-500 mr-1">📞</span> +27 67 050 0856
+          </a>
+        </div>
+      </div>
+    </footer>
 
-      if (!slug) {
-        postArea.innerHTML = '<p>No post specified.</p>';
-        return;
+    <!-- ✅ Blog Post Script -->
+    <script>
+      // Update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Helper: Get query parameter
+      function q(name) {
+        return new URLSearchParams(location.search).get(name);
       }
 
-      try {
-        const res = await fetch('./posts.json', { cache: 'no-store' });
-        const posts = await res.json();
-        const post = posts.find(p => p.slug === slug);
+      // Helper: Strip HTML for meta description
+      function stripText(html) {
+        const d = document.createElement("div");
+        d.innerHTML = html;
+        return (d.textContent || d.innerText || "").trim();
+      }
 
-        if (!post) {
-          postArea.innerHTML = '<p>Post not found.</p>';
+      (async function render() {
+        const slug = q("slug");
+        const postArea = document.getElementById("postArea");
+
+        if (!slug) {
+          postArea.innerHTML = "<p>No post specified.</p>";
           return;
         }
 
-        // ✅ Update title and meta info
-        document.title = `${post.title} | Swift Removals South Africa`;
-        document.getElementById('pageTitle').textContent = document.title;
+        try {
+          const res = await fetch("./posts.json", { cache: "no-store" });
+          const posts = await res.json();
+          const post = posts.find((p) => p.slug === slug);
 
-        const desc = post.excerpt || stripText(post.content_html).slice(0, 150);
-        document.getElementById('metaDesc').setAttribute('content', desc);
+          if (!post) {
+            postArea.innerHTML = "<p>Post not found.</p>";
+            return;
+          }
 
-        const canonical = post.canonical_url || (location.origin + location.pathname + '?slug=' + encodeURIComponent(slug));
-        document.getElementById('canonicalLink').href = canonical;
+          // ✅ Update title and meta info
+          document.title = `${post.title} | Swift Removals South Africa`;
+          document.getElementById("pageTitle").textContent = document.title;
 
-        // ✅ Open Graph / Twitter meta tags
-        const metas = [
-          { property: 'og:title', content: post.title },
-          { property: 'og:description', content: desc },
-          { property: 'og:type', content: 'article' },
-          { property: 'og:url', content: canonical },
-          { property: 'og:image', content: post.cover_image || '' },
-          { name: 'twitter:card', content: post.cover_image ? 'summary_large_image' : 'summary' },
-          { name: 'twitter:title', content: post.title },
-          { name: 'twitter:description', content: desc },
-          { name: 'twitter:image', content: post.cover_image || '' }
-        ];
+          const desc =
+            post.excerpt || stripText(post.content_html).slice(0, 150);
+          document.getElementById("metaDesc").setAttribute("content", desc);
 
-        metas.forEach(m => {
-          const el = document.createElement('meta');
-          if (m.property) el.setAttribute('property', m.property);
-          if (m.name) el.setAttribute('name', m.name);
-          el.setAttribute('content', m.content);
-          document.head.appendChild(el);
-        });
+          const canonical =
+            post.canonical_url ||
+            location.origin +
+              location.pathname +
+              "?slug=" +
+              encodeURIComponent(slug);
+          document.getElementById("canonicalLink").href = canonical;
 
-        // ✅ Build Post Content
-        const coverHtml = post.cover_image
-          ? `<div class="h-64 bg-cover bg-center rounded-xl mb-6" style="background-image:url('${post.cover_image}')"></div>`
-          : '';
+          // ✅ Open Graph / Twitter meta tags
+          const metas = [
+            { property: "og:title", content: post.title },
+            { property: "og:description", content: desc },
+            { property: "og:type", content: "article" },
+            { property: "og:url", content: canonical },
+            { property: "og:image", content: post.cover_image || "" },
+            {
+              name: "twitter:card",
+              content: post.cover_image ? "summary_large_image" : "summary",
+            },
+            { name: "twitter:title", content: post.title },
+            { name: "twitter:description", content: desc },
+            { name: "twitter:image", content: post.cover_image || "" },
+          ];
 
-        const tagsHtml = (post.tags || [])
-          .map(t => `<span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded mr-2 mb-2">${t}</span>`)
-          .join(' ');
+          metas.forEach((m) => {
+            const el = document.createElement("meta");
+            if (m.property) el.setAttribute("property", m.property);
+            if (m.name) el.setAttribute("name", m.name);
+            el.setAttribute("content", m.content);
+            document.head.appendChild(el);
+          });
 
-        postArea.classList.remove('italic', 'animate-pulse');
-        postArea.innerHTML = `
+          // ✅ Build Post Content
+          const coverHtml = post.cover_image
+            ? `<div class="h-64 bg-cover bg-center rounded-xl mb-6" style="background-image:url('${post.cover_image}')"></div>`
+            : "";
+
+          const tagsHtml = (post.tags || [])
+            .map(
+              (t) =>
+                `<span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded mr-2 mb-2">${t}</span>`
+            )
+            .join(" ");
+
+          postArea.classList.remove("italic", "animate-pulse");
+          postArea.innerHTML = `
           ${coverHtml}
           <header class="mb-6">
             <h1 class="text-3xl font-bold text-gray-900 mb-2">${post.title}</h1>
             <div class="text-sm text-gray-500 mb-2">
-              <time datetime="${post.date}">${new Date(post.date).toLocaleDateString()}</time> • <span>${post.author || 'Swift Removals'}</span>
+              <time datetime="${post.date}">${new Date(
+            post.date
+          ).toLocaleDateString()}</time> • <span>${
+            post.author || "Swift Removals"
+          }</span>
             </div>
             <div>${tagsHtml}</div>
           </header>
           <div class="prose prose-lg max-w-none">${post.content_html}</div>
         `;
 
-        // ✅ Structured Data (JSON-LD)
-        const imageAbs = post.cover_image ? new URL(post.cover_image, location.origin).href : null;
-        const ld = {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
-          "headline": post.title,
-          "description": desc,
-          "image": imageAbs ? [imageAbs] : undefined,
-          "author": { "@type": "Organization", "name": post.author || "Swift Removals" },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Swift Removals",
-            "logo": { "@type": "ImageObject", "url": (new URL('/images/logo.png', location.origin)).href }
-          },
-          "datePublished": post.date
-        };
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(ld);
-        document.head.appendChild(script);
-      } catch (err) {
-        console.error(err);
-        postArea.innerHTML = '<p>Failed to load post.</p>';
-      }
-    })();
-  </script>
-</body>
+          // ✅ Structured Data (JSON-LD)
+          const imageAbs = post.cover_image
+            ? new URL(post.cover_image, location.origin).href
+            : null;
+          const ld = {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+            headline: post.title,
+            description: desc,
+            image: imageAbs ? [imageAbs] : undefined,
+            author: {
+              "@type": "Organization",
+              name: post.author || "Swift Removals",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Swift Removals",
+              logo: {
+                "@type": "ImageObject",
+                url: new URL("/images/logo.png", location.origin).href,
+              },
+            },
+            datePublished: post.date,
+          };
+          const script = document.createElement("script");
+          script.type = "application/ld+json";
+          script.text = JSON.stringify(ld);
+          document.head.appendChild(script);
+        } catch (err) {
+          console.error(err);
+          postArea.innerHTML = "<p>Failed to load post.</p>";
+        }
+      })();
+    </script>
+  </body>
 </html>

@@ -133,7 +133,7 @@
               class="bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300"
             >
               Blog Posts
-          </a>
+            </a>
           </div>
           <div class="-mr-2 flex items-center md:hidden">
             <button
@@ -171,15 +171,15 @@
           >
           <a
             href="contact.html"
-            class="bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300"
+            class="inline-flex items-center bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300"
           >
             Get a Quote
           </a>
-           <a
-              href="blog/index.html"
-              class="bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300"
-            >
-              Blog Posts
+          <a
+            href="blog/index.html"
+            class="inline-flex items-center bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition duration-300"
+          >
+            Blog Posts
           </a>
         </div>
       </div>
@@ -190,25 +190,36 @@
       style="background-image: url('images/Truck-image1.png')"
     >
       <div class="absolute inset-0 bg-black opacity-70"></div>
-      <div
+            <div
         class="relative container mx-auto flex flex-col items-center justify-center text-center text-white h-screen"
       >
         <h1 class="text-5xl font-bold mb-4">Professional Removals Service</h1>
         <p class="text-lg mb-6">
           Reliable, Affordable, and Stress-Free Moving for Your Home or Business
         </p>
-        <a
-          id="quoteBtn"
-          href="contact.html"
-          class="bg-indigo-700 text-white py-3 px-6 font-semibold hover:bg-gray-100 hover:text-black relative overflow-hidden inline-block transition-colors duration-200"
-        >
-          <span class="relative z-10">Get a Free Quote</span>
-          <span
-            id="quoteLoader"
-            class="absolute left-0 top-0 h-full bg-indigo-700 transition-all duration-2000"
-            style="width: 0; z-index: 5"
-          ></span>
-        </a>
+        <div class="flex gap-8">
+          <a
+            id="quoteBtn"
+            href="contact.html"
+            class="bg-indigo-700 text-white py-3 px-6 font-semibold hover:bg-gray-100 hover:text-black relative overflow-hidden inline-block transition-colors duration-200"
+          >
+            <span class="relative z-10">Get a Free Quote</span>
+            <span
+              id="quoteLoader"
+              class="absolute left-0 top-0 h-full bg-indigo-700 transition-all duration-2000"
+              style="width: 0; z-index: 5"
+            ></span>
+          </a>
+          <a
+            href="tel:+27670500856"
+            class="bg-indigo-700 text-white py-3 px-6 font-semibold hover:bg-gray-100 hover:text-black inline-block transition-colors duration-200"
+          >
+            <span class="flex items-center">
+              <i data-feather="phone" class="mr-2"></i>
+              Call Us: +27 67 050 0856
+            </span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -257,7 +268,11 @@
             </a>
           </div>
           <div class="bg-white flex justify-center items-center">
-            <img src="images/Truck-image2.png" alt="SwiftRemovals Truck" loading="lazy" />
+            <img
+              src="images/Truck-image2.png"
+              alt="SwiftRemovals Truck"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
